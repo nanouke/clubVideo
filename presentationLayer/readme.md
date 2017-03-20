@@ -4,7 +4,7 @@
 
 | Page | Assigné à    |
 |----- | ----------- |
-| Accueil | none |
-| Listage des produits (Divers) | none |
-| Confirmation de la location | none |
+| Accueil | Paul |
+| Listage des produits (Divers) | Marc-andré D|
+| Login page | philippe |
 
