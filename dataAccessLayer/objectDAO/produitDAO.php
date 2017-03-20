@@ -34,11 +34,11 @@ function getListe()
     foreach($stmt->fetchAll() as $info)
     {
         $return->setCategorie($info['produitid']);
-        $return->setCategorie($info['nom']);
+        $return->setNom($info['nom']);
         $return->setCategorie($info['categorie']);
-        $return->setCategorie($info['description']);
-        $return->setCategorie($info['prixlocation']);
-        $return->setCategorie($info['disponible']);
+        $return->setDescription($info['description']);
+        $return->setPrixLocation($info['prixlocation']);
+        $return->setDisponible($info['disponible']);
         array_push($arr, $return);
     }
 
