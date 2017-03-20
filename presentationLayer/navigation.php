@@ -50,6 +50,7 @@
 		$idx = 0;
 		for( $i = 0; $i < 4; $i++)
 		{
+		
 		$idx++;
 		echo '<div class="row">';
             echo '<div class="col-md-4 portfolio-item">';
