@@ -6,7 +6,7 @@
  * Date: 3/20/2017
  * Time: 12:58 PM
  */
-class Employe
+class EmployeVO
 {
     // --- Variables
     protected $employeID;
