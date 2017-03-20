@@ -3,12 +3,12 @@
     <!-- Heading Row -->
     <div class="row">
         <div class="col-md-8">
-            <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+            <img class="img-responsive img-rounded" src="ressources/images/accueil.jpg" alt="">
         </div>
         <!-- /.col-md-8 -->
         <div class="col-md-4">
-            <h1>Club Vid&eacute;o</h1>
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+            <h1>ClubVid&eacute;o</h1>
+            <p>Bienvenue chez ClubVid&eacute;o.</p>
         </div>
         <!-- /.col-md-4 -->
     </div>
@@ -50,24 +50,4 @@
     </div>
     <!-- /.row -->
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
-        </div>
-    </footer>
-
-</div>
-<!-- /.container -->
-
-<!-- jQuery -->
-<script src="ressources/js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="ressources/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<?php include('includes/footer.php'); ?>
