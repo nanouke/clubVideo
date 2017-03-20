@@ -6,7 +6,7 @@
  * Date: 3/20/2017
  * Time: 12:50 PM
  */
-class Produit
+class ProduitVO
 {
     // --- Variables
     protected $produitID;
