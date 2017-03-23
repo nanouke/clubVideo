@@ -28,3 +28,10 @@ body {
     text-align: right;
     font-size: medium;
 }
+
+#navbar {
+    background-color: #39393A;
+    border-bottom-color: #B0212F;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+}

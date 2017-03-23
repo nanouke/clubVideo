@@ -1,8 +1,5 @@
 </div>
 
-<!-- Contient le css pour le footer -->
-<link href="ressources/css/3-col-portfolio.css" rel="stylesheet">
-
 <!-- Footer -->
 <footer>
     <div class="container-fluid" id="footer">
