@@ -1,9 +1,14 @@
 </div>
+
 <!-- Footer -->
 <footer>
-    <div class="row">
-        <div class="col-lg-12">
-            <p>Copyright &copy; Your Website 2014</p>
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <div class="row" >
+                <div class="col-lg-12">
+                    <p>Copyright &copy; ClubLapointe 2017</p>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /.row -->
@@ -15,9 +20,11 @@
 <!-- jQuery -->
 <script src="ressources/js/jquery.js"></script>
 
-
 <!-- Bootstrap Core JavaScript -->
 <script src="ressources/js/bootstrap.min.js"></script>
+
+<!-- main js -->
+<script src="ressources/js/main.js"></script>
 
 </body>
 

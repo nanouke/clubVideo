@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Club Vid&eacute</title>
+    <title>ClubLapointe</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="ressources/css/bootstrap.min.css" rel="stylesheet">
@@ -30,4 +30,4 @@
 
 <?php include('menu.php'); ?>
 
-<div class="container spaceTopPage">
+<div class="container spaceTopPage" id="content">

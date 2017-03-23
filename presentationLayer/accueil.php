@@ -3,12 +3,12 @@
     <!-- Heading Row -->
     <div class="row">
         <div class="col-md-8">
-            <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+            <img class="img-responsive img-rounded" src="ressources/images/accueil.jpg" alt="">
         </div>
         <!-- /.col-md-8 -->
         <div class="col-md-4">
-            <h1>Club Vid&eacute;o</h1>
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+            <h1>ClubLapointe</h1>
+            <p>Bienvenue chez ClubLapointe. L'endroit parfait pour tous vos besoins de vid&eacute;os, de jeux et de produits divers!</p>
         </div>
         <!-- /.col-md-4 -->
     </div>
@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="well text-center">
-                This is a well that is a great spot for a business tagline or phone number for easy access!
+                ClubLapointe a tout ce que vous avez besoin! Contactez-nous au 613-123-4567.
             </div>
         </div>
         <!-- /.col-lg-12 -->
@@ -30,9 +30,9 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-md-4">
-            <h2>Heading 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-            <a class="btn btn-default" href="#">More Info</a>
+            <h2>Naviguez notre inventaire</h2>
+            <p>Naviguez toute notre inventaire en ligne d&egrave;s maintenant!</p>
+            <a class="btn btn-default" href="navigation.php">Naviguez</a>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-4">
@@ -50,24 +50,4 @@
     </div>
     <!-- /.row -->
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
-        </div>
-    </footer>
-
-</div>
-<!-- /.container -->
-
-<!-- jQuery -->
-<script src="ressources/js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="ressources/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<?php include('includes/footer.php'); ?>
