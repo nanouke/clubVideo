@@ -26,7 +26,7 @@
 		
 		$fsize = folderSize("ressources/images/imageFilm/");
 		$idx = 0;
-		$fsize = 5;
+		//$fsize = 5;
 		echo '<div class="row">';
 		for( $i = 0; $i < $fsize; $i++)
 		{
