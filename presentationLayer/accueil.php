@@ -7,8 +7,8 @@
         </div>
         <!-- /.col-md-8 -->
         <div class="col-md-4">
-            <h1>ClubVid&eacute;o</h1>
-            <p>Bienvenue chez ClubVid&eacute;o.</p>
+            <h1>ClubLapointe</h1>
+            <p>Bienvenue chez ClubLapointe. L'endroit </p>
         </div>
         <!-- /.col-md-4 -->
     </div>
