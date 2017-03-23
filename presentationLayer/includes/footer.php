@@ -1,9 +1,17 @@
 </div>
+
+<!-- Contient le css pour le footer -->
+<link href="ressources/css/3-col-portfolio.css" rel="stylesheet">
+
 <!-- Footer -->
 <footer>
-    <div class="row">
-        <div class="col-lg-12">
-            <p>Copyright &copy; ClubVid&eacute;o 2017</p>
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <div class="row" >
+                <div class="col-lg-12">
+                    <p>Copyright &copy; ClubLapointe 2017</p>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /.row -->

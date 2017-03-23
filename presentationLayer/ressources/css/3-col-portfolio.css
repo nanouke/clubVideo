@@ -16,6 +16,15 @@ body {
     margin-bottom: 25px;
 }
 
-footer {
-    margin: 50px 0;
+#footer {
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-top-color: #B0212F;
+    border-top-width: 5px;
+    border-top-style: solid;
+    background-color: #39393A;
+    color: #E6E6E6;
+    text-align: right;
+    font-size: medium;
 }
