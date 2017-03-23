@@ -18,6 +18,10 @@ include ("../dataAccessLayer/ObjetDAO/EmployeDAO.php");
 // --- Variables
 $employeDAO = new EmployeDAO();
 
+// Debug
+//var_dump($_POST);
+//die();
+
 // Appelé lorsqu'un employe essaye de se connecter
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
@@ -28,13 +32,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     // Instance le User, Null si login invalide
     $userVO = $employeDAO->getLogin($user, $pass);
 
+    //var_dump($userVO);
+    //die();
+
     // Redirige vers le login page si le cridentials ne fonctionne pas.
     // Redirige vers location si sa fonctionne.
     if (is_null($userVO)) {
-        header("Location: localhost:8080/clubVideo/presentationLayer/login.php&error=credentialInvalide");
+        header("Location:/clubVideo/presentationLayer/login.php?error=credentialInvalide");
         die();
-    } else {
+    }
+    else
+    {
         $_SESSION['signin'] = "true";
-        header("Location: localhost:8080/clubVideo/presentationLayer/location.php");
+        header("Location:/clubVideo/presentationLayer/location.php");
+        die();
     }
 }

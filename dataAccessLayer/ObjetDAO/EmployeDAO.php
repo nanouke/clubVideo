@@ -17,7 +17,7 @@ class EmployeDAO
         try
         {
             // Connection à la db
-            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', '');
+            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', 'root');
 
             // Vérification si le compte exists
             $stmt = $db->prepare("SELECT EXISTS (SELECT nomutilisateur FROM employe WHERE nomutilisateur = :user and motpasse = :pass)");
@@ -48,12 +48,12 @@ class EmployeDAO
                 return $employe;
             }
             else{
-                echo null; // wrong password
+                return null; // wrong password
             }
 
         }
         catch(PDOException $e){
-            echo $e->getMessage();
+            return $e->getMessage();
         }
     }
 }
