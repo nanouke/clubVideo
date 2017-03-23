@@ -65,9 +65,9 @@
 		$idx = 0;
 		for( $i = 0; $i < $fsize; $i++)
 		{
-		
 		$idx++;
-		if($i % 3 == 0)echo '<div class="row">';
+		if($idx % 3 == 0){echo '<div class="row">';}
+			
             echo '<div class="col-md-4 portfolio-item">';
                 echo '<a href="#">';
                     echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$idx.'.jpg" alt="">';
@@ -77,8 +77,7 @@
                 echo '</h3>';
                 echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>';
             echo '</div>';
-        if($i % 3 == 0 && $i != 0)echo '</div>';
-		echo 2+4;
+        if($idx % 3 == 0 && $i != 0){echo '</div>'; }
 		}
 		?>
         <!-- /.row -->
