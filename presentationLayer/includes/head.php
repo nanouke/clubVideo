@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ClubVid&eacuteo</title>
+    <title>ClubLapointe</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="ressources/css/bootstrap.min.css" rel="stylesheet">
