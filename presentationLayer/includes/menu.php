@@ -21,6 +21,9 @@
                 <li>
                     <a href="navigation.php" style="color: #E6E6E6; font-size: large;">Naviguer</a>
                 </li>
+	            <li>
+                    <a href="location.php" style="color: #E6E6E6; font-size: large;">Louer</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
