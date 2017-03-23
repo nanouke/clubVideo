@@ -35,3 +35,7 @@ body {
     border-bottom-width: 5px;
     border-bottom-style: solid;
 }
+
+#img-navbar {
+    padding-top: 0px;
+}
