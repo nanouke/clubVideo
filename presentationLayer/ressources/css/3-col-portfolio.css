@@ -15,9 +15,11 @@ body {
 .portfolio-item {
     margin-bottom: 25px;
 }
+footer{
+    width: 100%;
+}
 
 #footer {
-    margin-top: 50px;
     padding-top: 25px;
     padding-bottom: 15px;
     border-top-color: #B0212F;

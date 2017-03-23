@@ -30,4 +30,4 @@
 
 <?php include('menu.php'); ?>
 
-<div class="container spaceTopPage">
+<div class="container spaceTopPage" id="content">
