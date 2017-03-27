@@ -2,7 +2,7 @@
 
 <div class="col-sm-12 col-md-offset-3 col-md-6">
 
-    <?php if($_GET['error']): ?>
+    <?php if(isset($_GET['error'])): ?>
         <div class="alert alert-danger">
             <?php if($_GET['error'] == "credentialInvalide"): ?>
 
