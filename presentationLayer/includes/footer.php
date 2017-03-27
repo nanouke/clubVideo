@@ -23,8 +23,6 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="ressources/js/bootstrap.min.js"></script>
 
-<!-- main js -->
-<script src="ressources/js/main.js"></script>
 
 </body>
 

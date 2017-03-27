@@ -8,6 +8,10 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+#content {
+    min-height: calc(100vh - 80px - 70px);
+}
+
 .spaceTopPage {
     padding-top: 10px;
 }
@@ -16,6 +20,8 @@ body {
     margin-bottom: 25px;
 }
 footer{
+    background-color: #39393A;
+    height: 80px;
     width: 100%;
 }
 
