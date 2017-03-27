@@ -45,6 +45,6 @@
 		if($idx % 3 == 0 && $i != 0){echo '</div>';echo '<div class="row">';}
 		}
 		?>
-    
+    </div>
     <!-- Footer -->
     <?php include('includes/footer.php'); ?>
