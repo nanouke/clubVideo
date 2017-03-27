@@ -28,20 +28,15 @@ function getListe()
     $stmt->execute();
 	
 	$result = $stmt->get_result();
-	while ($data = $result->fetch_assoc())
-	{
-		$d[] = $data;
-	}
+	$d = $result->fetch_all();
 
-	foreach($d as $info)
-	{
-		echo $info;
-	}
+	echo json_encode($d[1]);
+	
 	
 	// Proof that it's working
-	echo "<pre>";
-	var_dump($statistic);
-	echo "</pre>";
+	// echo "<pre>";
+	// var_dump($d);
+	// echo "</pre>";
 	
     // $arr = array();
     // $return = new ProduitVO();
@@ -66,6 +61,6 @@ function getListe()
 		// }
     // }
 
-    $json = json_encode($return);
-    echo $json;
+    // $json = json_encode($return);
+    // echo $json;
 }
