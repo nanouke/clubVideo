@@ -10,6 +10,10 @@
         </div>
 
 		<?php
+		include('../dataAccessLayer/ObjetDAO/produitDAO.php'); 
+		include('../dataAccessLayer/ObjetVO/ProduitVO.php'); 
+		$liste = getListe();
+		
 		function folderSize ($dir)
 		{
 			$i = 0; 
