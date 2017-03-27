@@ -53,7 +53,7 @@ class EmployeDAO
 
         }
         catch(PDOException $e){
-            return $e->getMessage();
+            return null;
         }
     }
 }
