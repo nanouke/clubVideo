@@ -12,9 +12,15 @@ if(!isset($_SESSION['signin'])){
 
         <form method="post" action="">
             <div class="form-group">
-                <label for="client">Numéro client</label>
-                <input type="email" class="form-control" id="client" placeholder="Numéro client">
+                <label for="client">Prénom client</label>
+                <input type="text" class="form-control" id="client" placeholder="Prénom client">
             </div>
+
+            <div class="form-group">
+                <label for="client">Nom client</label>
+                <input type="text" class="form-control" id="client" placeholder="Nom client">
+            </div>
+
             <div class="form-group">
                 <label for="client">Produit</label>
                 <select name="produitDropdown" id="produitDropdown">
