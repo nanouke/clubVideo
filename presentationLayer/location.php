@@ -6,8 +6,6 @@ if(!isset($_SESSION['signin'])){
     header('location: login.php');
 }
 
-var_dump(getListe());
-
 ?>
 
     <!-- Page Content -->
@@ -20,11 +18,22 @@ var_dump(getListe());
             </div>
             <div class="form-group">
                 <label for="client">Produit</label>
+                <select name="produitDropdown" id="produitDropdown">
+                    <?php
+                    $listeProduit = getDropdownListe();
 
+                    foreach ($listeProduit as $produit) {
+                        echo '<option value="' . $produit->produitid . '">' . $produit->produitid . ' - ' . $produit->nom . '</option>';
+                    }
+                    ?>
+                </select>
             </div>
 
-            <button></button>
+            <div class="text-right">
+                <button class="btn btn-primary">Envoyer</button>
+            </div>
         </form>
+
 
 	</div>
 
