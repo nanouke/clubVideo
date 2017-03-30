@@ -1,66 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: T
- * Date: 3/20/2017
- * Time: 1:08 PM
- */
 
-//$_POST["function"]();
 function getListe()
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "clubvideo";
+    try
+    {
+        // Connection à la db
+        $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', 'root');
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+        // Vérification si le compte exists
+        $stmt = $db->prepare("SELECT * FROM produit");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        return false;
+        return $result;
+
     }
-
-    $stmt = $conn->prepare("select * from clubvideo.produit; ");
-
-    $stmt->execute();
-	
-	$result = $stmt->get_result();
-	$d = $result->fetch_all();
-
-	echo json_encode($d[1]);
-	
-	
-	// Proof that it's working
-	// echo "<pre>";
-	// var_dump($d);
-	// echo "</pre>";
-	
-    // $arr = array();
-    // $return = new ProduitVO();
-
-	// $resultSet = $stmt->fetchAll();
-	
-    // foreach($resultSet as $info)
-    // {
-		// echo "echo array: ".json_encode($info);
-		// try {
-			// $return->setCategorie($info['produitid']);
-			// $return->setNom($info['nom']);
-			// $return->setCategorie($info['categorie']);
-			// $return->setDescription($info['description']);
-			// $return->setPrixLocation($info['prixlocation']);
-			// $return->setDisponible($info['disponible']);
-			// array_push($arr, $return);
-		// }
-		// catch(Exception $e)
-		// {
-			// echo "catch";
-		// }
-    // }
-
-    // $json = json_encode($return);
-    // echo $json;
+    catch(PDOException $e){
+        return null;
+    }
 }
+?>
