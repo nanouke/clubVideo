@@ -9,15 +9,12 @@
 //$_POST["function"]();
 function getListe()
 {
-<<<<<<< HEAD
     $servername = "localhost";
     $username = "root";
     $password = "root";
     $dbname = "clubvideo";
 
-=======
 	$sqlString = "select * from clubvideo.produit;";
->>>>>>> origin/master
 
 	try
     {
