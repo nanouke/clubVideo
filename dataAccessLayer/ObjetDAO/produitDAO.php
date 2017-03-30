@@ -14,23 +14,59 @@ function getListe()
     $password = "";
     $dbname = "clubvideo";
 
-    // Create connection
+	
+    //Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
+    //Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         return false;
     }
 
-    $stmt = $conn->prepare("select * from clubvideo.produit; ");
+    // $stmt = $conn->prepare("select * from clubvideo.produit; ");
 
-    $stmt->execute();
+    // $stmt->execute();
 	
-	$result = $stmt->get_result();
-	$d = $result->fetch_all();
+	// $result = $stmt->get_result();
+	// while ($d = $result->fetch())
+	// {
+		// print_r($d);
+	// }
+	
 
-	echo json_encode($d[1]);
+	//echo json_encode($d[3][2]);
+	
+	$sqlConn =  new mysqli($servername, $username, $password, $dbname);
+	
+	$sqlString = "select * from clubvideo.produit;";
+	
+	$result = $sqlConn->query($sqlString);
+	
+	
+	//$resultArray = array();
+	$resultArray = $result->fetch_all();
+	
+	print_r($resultArray);
+	foreach($resultArray as $info)
+	{
+		$p = new ProduitVO();
+		$p->setProduitID($p[0]);
+		$p->setNom($p[1]);
+		//$p->
+		$p->setCategorie($info['produitid']);
+		$p->setNom($info['nom']);
+		$p->setCategorie($info['categorie']);
+		$p->setDescription($info['description']);
+		$p->setPrixLocation($info['prixlocation']);
+		$p->setDisponible($info['disponible']);
+	}
+	
+	
+	echo $resultArray[0][1];
+	
+	// $resultArray = $result->fetch_all(MYSQLI_NUM);
+	// $resultArray = $result->fetch_all(MYSQLI_BOTH);
 	
 	
 	// Proof that it's working
