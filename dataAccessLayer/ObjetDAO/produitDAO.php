@@ -74,6 +74,52 @@ function getListe()
     // var_dump($d);
     // echo "</pre>";
 
+	
+	// $result = $stmt->get_result();
+	// while ($d = $result->fetch())
+	// {
+		// print_r($d);
+	// }
+	
+
+	//echo json_encode($d[3][2]);
+	
+	$sqlConn =  new mysqli($servername, $username, $password, $dbname);
+	
+	$sqlString = "select * from clubvideo.produit;";
+	
+	$result = $sqlConn->query($sqlString);
+	
+	
+	//$resultArray = array();
+	$resultArray = $result->fetch_all();
+	
+	//print_r($resultArray);
+	
+	$res = array();
+	foreach($resultArray as $info)
+	{
+		$p = new ProduitVO();
+		$p->setProduitID($info[0]);
+		$p->setNom($info[1]);
+		$p->setDescription($info[2]);
+		$p->setPrixLocation($info[3]);
+		$p->setDisponible($info[4]);
+		$p->setCategorie($info[5]);
+		array_push($res, $p);
+		
+	}
+	return $res;
+	
+	// $resultArray = $result->fetch_all(MYSQLI_NUM);
+	// $resultArray = $result->fetch_all(MYSQLI_BOTH);
+	
+	
+	// Proof that it's working
+	// echo "<pre>";
+	// var_dump($d);
+	// echo "</pre>";
+
     // $arr = array();
     // $return = new ProduitVO();
 
