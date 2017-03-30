@@ -25,6 +25,14 @@
                     <a href="location.php" style="color: #E6E6E6; font-size: large;">Louer</a>
                 </li>
             </ul>
+            <?php
+                session_start();
+                if(isset($_SESSION['signin'])){
+                    echo '<div class="navbar-form navbar-right">';
+                    echo '<button onclick="logout()" class="btn btn-default"><b>Logout</b></button>';
+                    echo '</div>';
+                }
+            ?>
         </div>
         <!-- /.navbar-collapse -->
     </div>

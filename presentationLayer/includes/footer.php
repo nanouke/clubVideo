@@ -19,6 +19,7 @@
 
 <!-- jQuery -->
 <script src="ressources/js/jquery.js"></script>
+<script src="ressources/js/logins.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="ressources/js/bootstrap.min.js"></script>
