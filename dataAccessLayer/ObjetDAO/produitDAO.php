@@ -47,23 +47,22 @@ function getListe()
 	//$resultArray = array();
 	$resultArray = $result->fetch_all();
 	
-	print_r($resultArray);
+	//print_r($resultArray);
+	
+	$res = array();
 	foreach($resultArray as $info)
 	{
 		$p = new ProduitVO();
-		$p->setProduitID($p[0]);
-		$p->setNom($p[1]);
-		//$p->
-		$p->setCategorie($info['produitid']);
-		$p->setNom($info['nom']);
-		$p->setCategorie($info['categorie']);
-		$p->setDescription($info['description']);
-		$p->setPrixLocation($info['prixlocation']);
-		$p->setDisponible($info['disponible']);
+		$p->setProduitID($info[0]);
+		$p->setNom($info[1]);
+		$p->setDescription($info[2]);
+		$p->setPrixLocation($info[3]);
+		$p->setDisponible($info[4]);
+		$p->setCategorie($info[5]);
+		array_push($res, $p);
+		
 	}
-	
-	
-	echo $resultArray[0][1];
+	return $res;
 	
 	// $resultArray = $result->fetch_all(MYSQLI_NUM);
 	// $resultArray = $result->fetch_all(MYSQLI_BOTH);

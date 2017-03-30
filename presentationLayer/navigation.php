@@ -1,4 +1,4 @@
-<?php include('includes/head.php'); ?>
+﻿<?php include('includes/head.php'); ?>
 
         <!-- Page Header -->
         <div class="row">
@@ -13,6 +13,8 @@
 		include('../dataAccessLayer/ObjetDAO/produitDAO.php'); 
 		include('../dataAccessLayer/ObjetVO/ProduitVO.php'); 
 		$liste = getListe();
+		
+		//print_r($liste);
 		
 		function folderSize ($dir)
 		{
@@ -32,21 +34,23 @@
 		$idx = 0;
 		//$fsize = 5;
 		echo '<div class="row">';
-		for( $i = 0; $i < $fsize; $i++)
+		foreach( $liste as $produit)
 		{
 		$idx++;
-		
+		$description = $produit->getDescription();
+		$id = $produit->getProduitID();
+		$titre = $produit->getNom();
 			
             echo '<div class="col-md-4 portfolio-item">';
                 echo '<a href="#">';
-                    echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$idx.'.jpg" alt="">';
+                    echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$id.'.jpg" alt="">';
                 echo '</a>';
                 echo '<h3>';
-                    echo '<a href="#">Vid&eacute;o '.$idx.'</a>';
+                    echo '<a href="#">'.$titre.'</a>';
                 echo '</h3>';
-                echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>';
+                echo '<p>'.$description.'</p>';
             echo '</div>';
-		if($idx % 3 == 0 && $i != 0){echo '</div>';echo '<div class="row">';}
+		if($idx % 3 == 0){echo '</div>';echo '<div class="row">';}
 		}
 		?>
     </div>
