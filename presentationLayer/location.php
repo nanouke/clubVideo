@@ -23,7 +23,7 @@ if(!isset($_SESSION['signin'])){
 
             <div class="form-group">
                 <label for="client">Produit</label>
-                <select name="produitDropdown" id="produitDropdown">
+                <select name="produitDropdown" id="produitDropdown" class="form-control">
                     <?php
                     $listeProduit = getDropdownListe();
 

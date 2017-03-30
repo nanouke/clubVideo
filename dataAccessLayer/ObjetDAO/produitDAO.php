@@ -11,7 +11,7 @@ function getListe()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "root";
     $dbname = "clubvideo";
 
 
