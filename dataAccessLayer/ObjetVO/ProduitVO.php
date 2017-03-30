@@ -95,6 +95,16 @@ class ProduitVO
     {
         $this->disponible = $disponible;
     }
+	
+	public function setProduitID($id)
+	{
+		$this->produitID = $id;
+	}
+	
+	public function getProduitID()
+	{
+		return $this->produitID;
+	}
 
 
 }
