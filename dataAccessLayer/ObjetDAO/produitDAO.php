@@ -9,6 +9,11 @@
 //$_POST["function"]();
 function getListe()
 {
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "clubvideo";
+
 	$sqlString = "select * from clubvideo.produit;";
 
 	try
