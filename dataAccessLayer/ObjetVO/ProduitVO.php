@@ -106,5 +106,21 @@ class ProduitVO
 		return $this->produitID;
 	}
 
+    /**
+     * @return mixed
+     */
+    public function getProduitID()
+    {
+        return $this->produitID;
+    }
+
+    /**
+     * @param mixed $produitID
+     */
+    public function setProduitID($produitID)
+    {
+        $this->produitID = $produitID;
+    }
+
 
 }
