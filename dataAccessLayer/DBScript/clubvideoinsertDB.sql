@@ -14,7 +14,7 @@ INSERT INTO `employe` VALUES
 (6,'Trudeau','Nicolas','numba1playa','clubvideo6'),
 (7,'St-Jean','Trevor','t','clubvideo7'),
 (8,'Rancourt','Paul','wifed','clubvideo8'),
-(9,'Marc-André','Deslorme','hackerman','clubvideo9');
+(9,'Marc-André','Delorme','hackerman','clubvideo9');
 
 INSERT INTO `transaction` VALUES 
 (1,5,'McDank','Memerick','2017-03-23 11:11:11'),
