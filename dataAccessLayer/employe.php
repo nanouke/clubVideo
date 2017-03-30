@@ -43,7 +43,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
     else
     {
-        $_SESSION['signin'] = "true";
+        $_SESSION['signin'] = $userVO;
         header("Location:/clubVideo/presentationLayer/location.php");
         die();
     }
