@@ -147,6 +147,7 @@ function getListe()
     // echo $json;
 }
 
+
 function getDropdownListe()
 {
     try
@@ -166,3 +167,27 @@ function getDropdownListe()
         return null;
     }
 }
+
+function louerItem($produit, $nom, $prenom, $date) {
+
+    // Connection à la db
+    $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', '');
+
+    // Vérification si le compte exists
+    $stmt = $db->prepare("INSERT INTO transaction VALUES (:user , :nom , :prenom , :date)");
+    $stmt->bindParam(':user' , $_SESSION['signin']->getEmployeID);
+    $stmt->bindParam(':nom' , $nom);
+    $stmt->bindParam(':prenom' , $prenom);
+    $stmt->bindParam(':date' , $date);
+    $stmt->execute();
+
+    $last_id = $db->lastInsertId();
+
+    // Vérification si le compte exists
+    $stmt = $db->prepare("INSERT INTO transactionproduit VALUES (:transaction , :produit)");
+    $stmt->bindParam(':transaction' , $last_id);
+    $stmt->bindParam(':produit' , $produit->getProduitID);
+    $stmt->execute();
+
+}
+
