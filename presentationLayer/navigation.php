@@ -50,7 +50,7 @@
                     echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$id.'.jpg" alt="" width="674" height="1000">';
                 //echo '</a>';
                 echo '<h3>';
-                    echo '<a href="#">'.$titre.' ('.$disponible.')</a>';
+                    echo '<a href="#">'.$titre.'</br>('.$disponible.')</a>';
                 echo '</h3>';
                 echo '<p>'.$description.'</p>';
             echo '</div>';
