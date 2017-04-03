@@ -1,4 +1,4 @@
-<?php include('includes/head.php'); ?>
+﻿<?php include('includes/head.php'); ?>
 
         <!-- Page Header -->
         <div class="row">
