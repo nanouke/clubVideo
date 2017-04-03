@@ -10,15 +10,15 @@ if(!isset($_SESSION['signin'])){
     <!-- Page Content -->
     <div class="container">
 
-        <form method="post" action="">
+        <form method="post" action="/clubVideo/dataAccessLayer/ObjetDAO/produitDAO.php">
             <div class="form-group">
                 <label for="client">Prénom client</label>
-                <input type="text" class="form-control" id="client" placeholder="Prénom client">
+                <input type="text" class="form-control" name="prenom" id="client" placeholder="Prénom client">
             </div>
 
             <div class="form-group">
                 <label for="client">Nom client</label>
-                <input type="text" class="form-control" id="client" placeholder="Nom client">
+                <input type="text" class="form-control" name="nom" id="client" placeholder="Nom client">
             </div>
 
             <div class="form-group">

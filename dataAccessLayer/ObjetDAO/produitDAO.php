@@ -54,7 +54,7 @@ function getDropdownListe()
         $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', 'root');
 
         // Vérification si le compte exists
-        $stmt = $db->prepare("SELECT * FROM produit");
+        $stmt = $db->prepare("SELECT * FROM produit where disponible > 0");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
 
@@ -66,26 +66,37 @@ function getDropdownListe()
     }
 }
 
-function louerItem($produit, $nom, $prenom, $date) {
+function louerItem() {
 
     // Connection à la db
     $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', 'root');
 
-    // Vérification si le compte exists
-    $stmt = $db->prepare("INSERT INTO transaction VALUES (:user , :nom , :prenom , :date)");
+    // Variables
+    $nom = $_SESSION['nom'];
+    $prenom = $_SESSION['prenom'];
+    $id = explode('-', $_SESSION['produitDropdown']);
+    $id = $id[0];
+
+    // On fait la transaction
+    $stmt = $db->prepare("INSERT INTO transaction VALUES (:user , :nom , :prenom , NOW())");
     $stmt->bindParam(':user' , $_SESSION['signin']->getEmployeID);
     $stmt->bindParam(':nom' , $nom);
     $stmt->bindParam(':prenom' , $prenom);
-    $stmt->bindParam(':date' , $date);
     $stmt->execute();
 
     $last_id = $db->lastInsertId();
 
-    // Vérification si le compte exists
+    // Ajoute la transaction au produit
     $stmt = $db->prepare("INSERT INTO transactionproduit VALUES (:transaction , :produit)");
     $stmt->bindParam(':transaction' , $last_id);
-    $stmt->bindParam(':produit' , $produit->getProduitID);
+    $stmt->bindParam(':produit' , $id);
     $stmt->execute();
+
+    // Diminue le disponnible de 1
+    $stmt = $db->prepare("UPDATE produit SET disponible -= 1 where produitid = :prod");
+    $stmt->bindParam(':prod' , $id);
+    $stmt->execute();
+
 
 }
 
