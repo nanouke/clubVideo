@@ -75,7 +75,7 @@ class ProduitDAO
 
             // On fait la transaction
             $stmt = $db->prepare("INSERT INTO transaction VALUES (:user , :nom , :prenom , NOW())");
-            $stmt->bindParam(':user', $_SESSION['signin']->getEmployeID);
+            $stmt->bindParam(':user', $_SESSION['signin']);
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
             $stmt->execute();

@@ -25,7 +25,8 @@ if(!isset($_SESSION['signin'])){
                 <label for="client">Produit</label>
                 <select name="produitDropdown" id="produitDropdown" class="form-control">
                     <?php
-                    $listeProduit = getDropdownListe();
+                    $produitDAO = new ProduitDAO();
+                    $listeProduit = $produitDAO->getDropdownListe();
 
                     foreach ($listeProduit as $produit) {
                         echo '<option value="' . $produit->produitid . '">' . $produit->produitid . ' - ' . $produit->nom . '</option>';

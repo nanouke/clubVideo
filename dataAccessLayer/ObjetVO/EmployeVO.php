@@ -94,7 +94,4 @@ class EmployeVO
     {
         $this->motDePasse = $motDePasse;
     }
-
-    // --- Setters & Getters
-    
 }

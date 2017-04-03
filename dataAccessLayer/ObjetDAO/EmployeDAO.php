@@ -38,7 +38,7 @@ class EmployeDAO
             $row = $stmt->fetch();
 
             // On retourne l'information de l'employe qui viens de se connecter
-            if(row){
+            if($row){
                 // Objet de Transport
                 $employe = new EmployeVO();
                 $employe->setEmployeID($row['employeid']);

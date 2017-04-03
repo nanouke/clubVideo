@@ -17,13 +17,15 @@ include("../dataAccessLayer/ObjetDAO/ProduitDAO.php");
 $produitDAO = new ProduitDAO();
 
 // Appelé lorsqu'un employe essaye de se connecter
-if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_SESSION['produitDropdown'])) {
+if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['produitDropdown'])) {
 
     // Variables
-    $nom = $_SESSION['nom'];
-    $prenom = $_SESSION['prenom'];
-    $id = explode('-', $_SESSION['produitDropdown']);
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $id = explode('-', $_POST['produitDropdown']);
     $id = $id[0];
+
+    echo 'id: ' . $id .'nom: ' . $nom . ' prenom: ' . $prenom;
 
     // Instance le User, Null si login invalide
     $error = $produitDAO->louerItem($nom, $prenom, $id);
@@ -32,12 +34,12 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_SESSION['produitD
     // Redirige vers le login page si le cridentials ne fonctionne pas.
     // Redirige vers location si sa fonctionne.
     if (is_null($error)) {
-        header("Location:/clubVideo/presentationLayer/location.php?message=success");
+        //header("Location:/clubVideo/presentationLayer/location.php?message=success");
         die();
     }
     else
     {
-        header("Location:/clubVideo/presentationLayer/location.php?message=error");
+        //header("Location:/clubVideo/presentationLayer/location.php?message=error");
         die();
     }
 }
