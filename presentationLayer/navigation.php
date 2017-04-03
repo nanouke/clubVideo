@@ -41,10 +41,12 @@
 		$description = $produit->getDescription();
 		$id = $produit->getProduitID();
 		$titre = $produit->getNom();
-		$disponible = $produit->getDisponible();
-		if($disponible == "1")$disponible = "Disponible";
+		$nombreProduit = (int)$produit->getDisponible();
+		if($nombreProduit >= 1)$disponible = $nombreProduit." Disponible";
 		else $disponible = "Non disponible";
-			
+		if($nombreProduit > 1) $disponible = $disponible. "s";
+		
+		
             echo '<div class="col-md-4 portfolio-item">';
                 //echo '<a href="#">';
                     echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$id.'.jpg" alt="" width="674" height="1000">';
