@@ -25,8 +25,6 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['produitDrop
     $id = explode('-', $_POST['produitDropdown']);
     $id = $id[0];
 
-    echo 'id: ' . $id .'nom: ' . $nom . ' prenom: ' . $prenom;
-
     // Instance le User, Null si login invalide
     $error = $produitDAO->louerItem($nom, $prenom, $id);
 

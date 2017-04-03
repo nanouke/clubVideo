@@ -32,9 +32,10 @@ class EmployeDAO
             }
 
             // Vérification si le mot de passe match
-            $stmt = $db->prepare("SELECT * FROM user WHERE nomutilisateur = :user and motpasse = :pass)");
+            $stmt = $db->prepare("SELECT * FROM employe WHERE nomutilisateur = :user and motpasse = :pass");
             $stmt->bindParam(':user' , $user);
             $stmt->bindParam(':pass' , $password);
+            $stmt->execute();
             $row = $stmt->fetch();
 
             // On retourne l'information de l'employe qui viens de se connecter
