@@ -74,7 +74,7 @@ class ProduitDAO
             $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
             // On fait la transaction
-            $stmt = $db->prepare("INSERT INTO transaction VALUES (:user , :nom , :prenom , NOW())");
+            $stmt = $db->prepare("INSERT INTO transaction(employeid, nomclient, prenomclient, date) VALUES (:user , :nom , :prenom , NOW())");
             $stmt->bindParam(':user', $_SESSION['signin']);
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
@@ -89,7 +89,7 @@ class ProduitDAO
             $stmt->execute();
 
             // Diminue le disponnible de 1
-            $stmt = $db->prepare("UPDATE produit SET disponible -= 1 where produitid = :prod");
+            $stmt = $db->prepare("UPDATE produit SET disponible = disponible - 1 where produitid = :prod");
             $stmt->bindParam(':prod', $id);
             $stmt->execute();
         } catch (PDOException $e) {

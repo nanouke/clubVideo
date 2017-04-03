@@ -32,12 +32,12 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['produitDrop
     // Redirige vers le login page si le cridentials ne fonctionne pas.
     // Redirige vers location si sa fonctionne.
     if (is_null($error)) {
-        //header("Location:/clubVideo/presentationLayer/location.php?message=success");
+        header("Location:/clubVideo/presentationLayer/location.php?message=success");
         die();
     }
     else
     {
-        //header("Location:/clubVideo/presentationLayer/location.php?message=error");
+        header("Location:/clubVideo/presentationLayer/location.php?message=error");
         die();
     }
 }

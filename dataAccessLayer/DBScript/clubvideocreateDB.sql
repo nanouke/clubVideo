@@ -36,7 +36,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `clubvideo`.`produit`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clubvideo`.`produit` (
-  `produitid` INT(11) NOT NULL,
+  `produitid` INT(11) NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(50) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
   `prixlocation` DOUBLE NOT NULL,
@@ -51,7 +51,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `clubvideo`.`transaction`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clubvideo`.`transaction` (
-  `transactionid` INT(11) NOT NULL,
+  `transactionid` INT(11) NOT NULL AUTO_INCREMENT,
   `employeid` INT(11) NULL DEFAULT NULL,
   `nomclient` VARCHAR(20) NOT NULL,
   `prenomclient` VARCHAR(20) NOT NULL,
