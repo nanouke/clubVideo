@@ -1,5 +1,5 @@
 <?php include_once ("includes/head.php");
-include_once ("../dataAccessLayer/ObjetDAO/produitDAO.php");
+include_once("../dataAccessLayer/ObjetDAO/ProduitDAO.php");
 
 if(!isset($_SESSION['signin'])){
     header('location: login.php');
@@ -10,15 +10,15 @@ if(!isset($_SESSION['signin'])){
     <!-- Page Content -->
     <div class="container">
 
-        <form method="post" action="">
+        <form method="post" action="/clubVideo/dataAccessLayer/produit.php">
             <div class="form-group">
                 <label for="client">Prénom client</label>
-                <input type="text" class="form-control" id="client" placeholder="Prénom client">
+                <input type="text" class="form-control" name="prenom" id="client" placeholder="Prénom client">
             </div>
 
             <div class="form-group">
                 <label for="client">Nom client</label>
-                <input type="text" class="form-control" id="client" placeholder="Nom client">
+                <input type="text" class="form-control" name="nom" id="client" placeholder="Nom client">
             </div>
 
             <div class="form-group">

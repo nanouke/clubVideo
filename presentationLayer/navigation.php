@@ -10,7 +10,7 @@
         </div>
 
 		<?php
-		include('../dataAccessLayer/ObjetDAO/produitDAO.php'); 
+		include('../dataAccessLayer/ObjetDAO/ProduitDAO.php');
 		include('../dataAccessLayer/ObjetVO/ProduitVO.php'); 
 		$liste = getListe();
 		
