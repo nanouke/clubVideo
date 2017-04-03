@@ -12,7 +12,8 @@
 		<?php
 		include('../dataAccessLayer/ObjetDAO/ProduitDAO.php');
 		include('../dataAccessLayer/ObjetVO/ProduitVO.php'); 
-		$liste = getListe();
+		$dao = new ProduitDAO();
+		$liste = $dao->getListe();
 		
 		//print_r($liste);
 		
