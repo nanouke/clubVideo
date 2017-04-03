@@ -1,4 +1,7 @@
-﻿<?php
+﻿<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<?php
+
 /**
  * Created by PhpStorm.
  * User: T
@@ -20,7 +23,7 @@ class ProduitDAO
 
         try {
             // Connection à la db
-            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', 'root');
+            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
             // Vérification si le compte exists
             $stmt = $db->prepare($sqlString);
@@ -49,7 +52,7 @@ class ProduitDAO
     {
         try {
             // Connection à la db
-            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', 'root');
+            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
             // Vérification si le compte exists
             $stmt = $db->prepare("SELECT * FROM produit where disponible > 0");
@@ -68,7 +71,7 @@ class ProduitDAO
 
         try {
             // Connection à la db
-            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo', 'root', 'root');
+            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
             // On fait la transaction
             $stmt = $db->prepare("INSERT INTO transaction VALUES (:user , :nom , :prenom , NOW())");
