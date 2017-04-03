@@ -42,9 +42,9 @@
 		$titre = $produit->getNom();
 			
             echo '<div class="col-md-4 portfolio-item">';
-                echo '<a href="#">';
+                //echo '<a href="#">';
                     echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$id.'.jpg" alt="" width="674" height="1000">';
-                echo '</a>';
+                //echo '</a>';
                 echo '<h3>';
                     echo '<a href="#">'.$titre.'</a>';
                 echo '</h3>';
