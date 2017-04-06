@@ -10,6 +10,8 @@ if(!isset($_SESSION['signin'])){
     <!-- Page Content -->
     <div class="container">
 
+        <h2>Réserver</h2>
+
         <form method="post" action="/clubVideo/dataAccessLayer/produit.php">
             <div class="form-group">
                 <label for="client">Prénom client</label>
@@ -40,6 +42,36 @@ if(!isset($_SESSION['signin'])){
             </div>
         </form>
 
+        <h2>Retourner</h2>
+
+        <form method="post" action="/clubVideo/dataAccessLayer/produit.php" class="form-inline" id="form-chercherClient">
+
+            <div class="form-group">
+                <label for="retour_prenom_client">Prénom client:</label>
+                <input type="text" class="form-control" name="prenom" id="retour_prenom_client" placeholder="Prénom client">
+            </div>
+
+            <div class="form-group">
+                <label for="retour_prenom_nom">Prénom client:</label>
+                <input type="text" class="form-control" name="nom" id="retour_prenom_nom" placeholder="Nom client">
+            </div>
+
+            <button class="btn btn-primary">Chercher</button>
+
+        </form>
+
+        <form method="post" action="" class="form-inline" id="form-retour">
+
+            <div class="form-group">
+                <label for="transaction">Transaction</label>
+                <select name="transactionDropdown" id="transaction" class="form-control">
+
+                </select>
+            </div>
+
+            <button class="btn btn-primary">Retourner</button>
+
+        </form>
 
 	</div>
 

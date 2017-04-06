@@ -109,8 +109,8 @@ class ProduitDAO
             $stmt->execute();
 
             $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-            json_encode($result);
-            return $result;
+
+            return json_encode($result);
 
         } catch (PDOException $e) {
             return $e;
