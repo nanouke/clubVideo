@@ -11,19 +11,17 @@
 
 class ProduitDAO
 {
-//$_POST["function"]();
+	private $connection_string = 'mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8';
+	private $username = 'root';
+	private $password = 'root';
+	
+	//Fonction utilisé par la page navigation.php permettant de retourné une liste de la base de donnée en ProduitVO.
     function getListe()
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "clubvideo";
-
         $sqlString = "select * from clubvideo.produit;";
-
         try {
             // Connection à la db
-            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
+            $db = new PDO($this->connection_string, $this->username, $this->password);
 
             // Vérification si le compte exists
             $stmt = $db->prepare($sqlString);
@@ -48,11 +46,12 @@ class ProduitDAO
     }
 
 
+	
     function getDropdownListe()
     {
         try {
             // Connection à la db
-            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
+            $db = new PDO($this->connection_string, $this->username, $this->password);
 
             // Vérification si le compte exists
             $stmt = $db->prepare("SELECT * FROM produit where disponible > 0");
@@ -66,12 +65,13 @@ class ProduitDAO
         }
     }
 
+	//Fonction utilisé par la page louer.php permettant de retourné une liste de la base de donnée en ProduitVO.
     function louerItem($nom, $prenom, $id)
     {
 
         try {
             // Connection à la db
-            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
+            $db = new PDO($this->connection_string, $this->username, $this->password);
 
             // On fait la transaction
             $stmt = $db->prepare("INSERT INTO transaction(employeid, nomclient, prenomclient, date) VALUES (:user , :nom , :prenom , NOW())");

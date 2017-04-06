@@ -46,7 +46,7 @@
 			echo '<div class="col-md-4 portfolio-item">';
 				echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$id.'.jpg" alt="'.$titre.'" width="674" height="1000">';
 				echo '<h3>';
-					echo '<a href="#">'.$titre.'</br>('.$disponible.')</a>';
+					echo '<a>'.$titre.'</br>('.$disponible.')</a>';
 				echo '</h3>';
 				echo '<p>'.$description.'</p>';
 			echo '</div>';
