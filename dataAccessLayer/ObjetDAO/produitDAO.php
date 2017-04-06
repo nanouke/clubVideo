@@ -96,5 +96,27 @@ class ProduitDAO
             return $e;
         }
     }
+
+    function rechercheParNom($nom, $prenom) {
+        try {
+            // Connection à la DB
+            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
+
+            // Prépare le statement
+            $stmt = $db->prepare("SELECT * from transaction where nom = :nom and prenom = :prenom");
+            $stmt->bindParam(':nom', $nom);
+            $stmt->bindParam(':prenom', $prenom);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+            json_encode($result);
+            echo $result;
+        } catch (PDOException $e) {
+            echo $e;
+        }
+    }
+
+    function retournerProduit() {
+        
+    }
 }
 
