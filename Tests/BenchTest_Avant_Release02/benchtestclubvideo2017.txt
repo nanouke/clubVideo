@@ -1,0 +1,36 @@
+BENCH TEST: PROJET CLUB VIDEO - 2017-04-03 12:31:50
+
+GUI
+	produit
+		creer - bien
+		modifier - a corriger
+			radio button place a oui au lieu de non pour la disponibilite
+		supprimer - bien
+		select - bien
+		transaction - bien
+		Affichage produits - a corriger/implementer
+			ajouter disponibilite a la table de produits
+			rendre la taille de la table dynamique en fonction du contenu du texte (non critique)
+		
+	employe
+		create - a corriger
+			mot pass -> mot passe
+		update - bien
+		select - bien
+WEB
+	Affichage d'accueil - 
+	Affichage de navigation -
+	MENU
+		accueil link - bien
+		naviguer link - bien
+		transaction link - bien
+		louer link - bien
+	EMPLOYE
+		login - bien
+		logout - a corriger
+			ne peut pas se deconnecter lorsqu'on visualise la page louer
+		louer - 
+
+REMARQUES
+	cacher les mots de passe avec des bulles au lieu du texte en clair?
+	
