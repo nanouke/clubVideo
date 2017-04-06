@@ -41,12 +41,16 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['produitDrop
         die();
     }
 }
-
+else if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['retour'])) {
+    $produitDAO->retournerProduit();
+}
 else if (isset($_POST['nom']) && isset($_POST['prenom'])) {
     // Variables
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
 
     // Echo la liste de transactions contenant le nom et prenom en paramètre
-    $produitDAO->rechercheParNom($nom, $prenom);
+    $results = $produitDAO->rechercheParNom($nom, $prenom);
+
+    echo $results;
 }

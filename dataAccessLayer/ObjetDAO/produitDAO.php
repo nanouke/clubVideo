@@ -107,16 +107,43 @@ class ProduitDAO
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
             $stmt->execute();
+
             $result = $stmt->fetchAll(PDO::FETCH_OBJ);
             json_encode($result);
-            echo $result;
+            return $result;
+
         } catch (PDOException $e) {
-            echo $e;
+            return $e;
         }
     }
 
     function retournerProduit() {
-        
+        try {
+            // Connection à la DB
+            $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
+
+            // Variables
+            $id = $_POST['transactionID'];
+            $nom = $_POST['nom'];
+            $prenom = $_POST['prenom'];
+
+            // Prépare le statement
+            $stmt = $db->prepare("UPDATE produit as P INNER JOIN transactionproduit as TP ON P.produitid = TP.produitid and TP.transactionid = :transID SET disponible = disponible + 1");
+            $stmt->bindParam(':transID', $id);
+            $stmt->execute();
+
+            // Prépare le statement
+            $stmt = $db->prepare("select P.produitid from produit P INNER JOIN transactionproduit TP on P.produitid = TP.produitid where TP.transactionid = :transID");
+            $stmt->bindParam(':transID', $id);
+            $stmt->execute();
+
+            $produitID = $stmt->fetch();
+
+            $this->louerItem($nom, $prenom, $produitID);
+
+        } catch (PDOException $e) {
+            return $e;
+        }
     }
 }
 
