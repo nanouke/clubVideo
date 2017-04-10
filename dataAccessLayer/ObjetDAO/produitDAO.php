@@ -1,6 +1,4 @@
-﻿<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-<?php
+﻿<?php
 
 /**
  * Created by PhpStorm.
@@ -97,13 +95,46 @@ class ProduitDAO
         }
     }
 
+    /* Retourne un item, ajoute une transaction */
+    function retournerItem($nom, $prenom, $id)
+    {
+
+        try {
+            // Connection à la db
+            $db = new PDO($this->connection_string, $this->username, $this->password);
+
+            // On fait la transaction
+            $stmt = $db->prepare("INSERT INTO transaction(employeid, nomclient, prenomclient, date) VALUES (:user , :nom , :prenom , NOW())");
+            $stmt->bindParam(':user', $_SESSION['signin']);
+            $stmt->bindParam(':nom', $nom);
+            $stmt->bindParam(':prenom', $prenom);
+            $stmt->execute();
+
+            $last_id = $db->lastInsertId();
+
+            // Ajoute la transaction au produit
+            $stmt = $db->prepare("INSERT INTO transactionproduit VALUES (:transaction , :produit)");
+            $stmt->bindParam(':transaction', $last_id);
+            $stmt->bindParam(':produit', $id);
+            $stmt->execute();
+
+            // Diminue le disponnible de 1
+            $stmt = $db->prepare("UPDATE produit SET disponible = disponible + 1 where produitid = :prod");
+            $stmt->bindParam(':prod', $id);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            return $e;
+        }
+    }
+
+    /* Envoie la liste qu'un usager a louée*/
     function rechercheParNom($nom, $prenom) {
         try {
             // Connection à la DB
             $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
             // Prépare le statement
-            $stmt = $db->prepare("SELECT * from transaction where nom = :nom and prenom = :prenom");
+            $stmt = $db->prepare("SELECT * from transaction where nomclient = :nom and prenomclient = :prenom");
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
             $stmt->execute();
@@ -117,6 +148,7 @@ class ProduitDAO
         }
     }
 
+    /* Retourne le produit liée à la Transaction ID */
     function retournerProduit() {
         try {
             // Connection à la DB
@@ -139,7 +171,7 @@ class ProduitDAO
 
             $produitID = $stmt->fetch();
 
-            $this->louerItem($nom, $prenom, $produitID);
+            $this->retournerItem($nom, $prenom, $produitID);
 
         } catch (PDOException $e) {
             return $e;
