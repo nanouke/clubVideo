@@ -44,7 +44,7 @@ if(!isset($_SESSION['signin'])){
 
         <h2>Retourner</h2>
 
-        <form method="post" action="/clubVideo/dataAccessLayer/produit.php" class="form-inline" id="form-chercherClient">
+        <form method="post" action="/clubVideo/dataAccessLayer/produit.php" class="" id="form-chercherClient">
 
             <div class="form-group">
                 <label for="retour_prenom_client">Prénom client:</label>
@@ -60,21 +60,23 @@ if(!isset($_SESSION['signin'])){
 
         </form>
 
-        <form method="post" action="/clubVideo/dataAccessLayer/produit.php" class="form-inline" id="form-retour">
 
-            <input type="hidden" name="prenom" value="null" id="prenomRetour">
-            <input type="hidden" name="nom" value="null" id="nomRetour">
-            <input type="hidden" name="retour" value="true">
+            <form method="post" action="/clubVideo/dataAccessLayer/produit.php" class="" id="form-retour" style="padding: 2em 0">
 
-            <div class="form-group">
-                <label for="transaction">Transaction</label>
-                <select name="transactionID" id="transaction" class="form-control">
-                </select>
-            </div>
+                <input type="hidden" name="prenom" value="null" id="prenomRetour">
+                <input type="hidden" name="nom" value="null" id="nomRetour">
+                <input type="hidden" name="retour" value="true">
 
-            <button class="btn btn-primary">Retourner</button>
+                <div class="form-group">
+                    <label for="transaction">Transaction</label>
+                    <select name="transactionID" id="transaction" class="form-control">
+                    </select>
+                </div>
 
-        </form>
+                <button class="btn btn-primary">Retourner</button>
+
+            </form>
+
 
 	</div>
 
