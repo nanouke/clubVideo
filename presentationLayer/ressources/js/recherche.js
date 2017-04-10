@@ -33,7 +33,7 @@ $(function () {
 
                 for(var i = 0; i < transactions.length; i++)
                 {
-                    $transaction.append('<option value="' + transactions[i].transationid + '">' + transactions[i].nom + '</option>')
+                    $transaction.append('<option value="' + transactions[i].transactionid + '">' + transactions[i].nom + '</option>')
 
                     console.log(transactions[i]);
                 }
