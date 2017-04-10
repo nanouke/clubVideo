@@ -2,7 +2,7 @@
 
 <?php
 	include('../dataAccessLayer/ObjetDAO/produitDAO.php');
-	include('../dataAccessLayer/ObjetVO/produitVO.php'); 
+	include('../dataAccessLayer/ObjetVO/ProduitVO.php'); 
 	
 	//création de l'objet DAO ayant accès à la base de donnée.
 	$dao = new ProduitDAO();
@@ -44,7 +44,7 @@
 			
 			//Affichage de l'image selon l'ID du produit, le nom/titre et la description du produit.
 			echo '<div class="col-md-4 portfolio-item">';
-				echo '<img class="img-responsive" src="ressources/images/imageFilm/film'.$id.'.jpg" alt="'.$titre.'" width="674" height="1000">';
+				echo '<img class="img-responsive" src="ressources/images/imageFilm/'.$id.'.jpg" alt="'.$titre.'" width="674" height="1000">';
 				echo '<h3>';
 					echo '<a>'.$titre.'</br>('.$disponible.')</a>';
 				echo '</h3>';
