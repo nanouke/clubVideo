@@ -20,14 +20,23 @@ $(function () {
             url: url,
             method: method,
             data: formData,
-            success: function (data, textStatus, jqXHR ) {
+            dataType: 'text',
+            success: function (data) {
 
-                console.log(data);
 
-                // for(var i = 0; i < data.lenght; i++)
-                // {
-                //     $('#transaction').append('<option value="' + data[i] + '">' + data[i] + '</option>')
-                // }
+                var transactions = JSON.parse(data.substr(1));
+
+                var $transaction = $('#transaction');
+
+                $('#prenomRetour').val($('#retour_prenom_nom').val());
+                $('#nomRetour').val($('#retour_prenom_client').val());
+
+                for(var i = 0; i < transactions.length; i++)
+                {
+                    $transaction.append('<option value="' + transactions[i].transationid + '">' + transactions[i].nom + '</option>')
+
+                    console.log(transactions[i]);
+                }
 
 
             }
