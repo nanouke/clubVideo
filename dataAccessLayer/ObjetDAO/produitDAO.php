@@ -153,15 +153,12 @@ class ProduitDAO
     }
 
     /* Retourne le produit liée à la Transaction ID */
-    function retournerProduit() {
+    function retournerProduit($nom, $prenom, $id) {
         try {
             // Connection à la DB
             $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
-            // Variables
-            $id = $_POST['transactionID'];
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
+
 
             // Prépare le statement
             $stmt = $db->prepare("UPDATE produit as P INNER JOIN transactionproduit as TP ON P.produitid = TP.produitid and TP.transactionid = :transID SET disponible = disponible + 1");

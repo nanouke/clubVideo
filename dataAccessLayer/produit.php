@@ -42,7 +42,10 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['produitDrop
     }
 }
 else if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['retour'])) {
-    $produitDAO->retournerProduit();
+
+    $produitDAO->retournerProduit($_POST['nom'], $_POST['prenom'], $_POST['transactionID']);
+
+    header("Location:/clubVideo/presentationLayer/location.php");
 }
 else if (isset($_POST['nom']) && isset($_POST['prenom'])) {
     // Variables
