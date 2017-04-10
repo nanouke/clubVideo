@@ -115,12 +115,12 @@ class ProduitDAO
             // Ajoute la transaction au produit
             $stmt = $db->prepare("INSERT INTO transactionproduit VALUES (:transaction , :produit)");
             $stmt->bindParam(':transaction', $last_id);
-            $stmt->bindParam(':produit', $id);
+            $stmt->bindParam(':produit', $id[0]);
             $stmt->execute();
 
             // Diminue le disponnible de 1
             $stmt = $db->prepare("UPDATE produit SET disponible = disponible + 1 where produitid = :prod");
-            $stmt->bindParam(':prod', $id);
+            $stmt->bindParam(':prod', $id[0]);
             $stmt->execute();
         } catch (PDOException $e) {
             return $e;
@@ -159,9 +159,13 @@ class ProduitDAO
             $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
             // Prépare le statement
-            $stmt = $db->prepare("DELETE from transactionproduit where transactionid = :transID");
+            $stmt = $db->prepare("select P.produitid from produit P INNER JOIN transactionproduit TP on P.produitid = TP.produitid where TP.transactionid = :transID");
             $stmt->bindParam(':transID', $id);
             $stmt->execute();
+
+            $produitID = $stmt->fetch();
+            echo $produitID[0];
+            $this->retournerItem($nom, $prenom, $produitID);
 
             // Prépare le statement
             $stmt = $db->prepare("DELETE from transaction where transactionid = :transID");
@@ -169,13 +173,10 @@ class ProduitDAO
             $stmt->execute();
 
             // Prépare le statement
-            $stmt = $db->prepare("select P.produitid from produit P INNER JOIN transactionproduit TP on P.produitid = TP.produitid where TP.transactionid = :transID");
+            $stmt = $db->prepare("DELETE from transactionproduit where transactionid = :transID");
             $stmt->bindParam(':transID', $id);
             $stmt->execute();
 
-            $produitID = $stmt->fetch();
-
-            $this->retournerItem($nom, $prenom, $produitID);
 
         } catch (PDOException $e) {
             return $e;
