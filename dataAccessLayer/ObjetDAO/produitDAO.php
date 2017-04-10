@@ -158,13 +158,6 @@ class ProduitDAO
             // Connection à la DB
             $db = new PDO('mysql:server=127.0.0.1:3306;dbname=clubvideo;charset=utf8', 'root', 'root');
 
-
-
-            // Prépare le statement
-            $stmt = $db->prepare("UPDATE produit as P INNER JOIN transactionproduit as TP ON P.produitid = TP.produitid and TP.transactionid = :transID SET disponible = disponible + 1");
-            $stmt->bindParam(':transID', $id);
-            $stmt->execute();
-
             // Prépare le statement
             $stmt = $db->prepare("select P.produitid from produit P INNER JOIN transactionproduit TP on P.produitid = TP.produitid where TP.transactionid = :transID");
             $stmt->bindParam(':transID', $id);
