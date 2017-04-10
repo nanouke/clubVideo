@@ -52,5 +52,5 @@ else if (isset($_POST['nom']) && isset($_POST['prenom'])) {
     // Echo la liste de transactions contenant le nom et prenom en paramètre
     $results = $produitDAO->rechercheParNom($nom, $prenom);
 
-    echo $results;
+    echo json_encode($results);
 }

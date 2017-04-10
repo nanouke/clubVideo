@@ -62,10 +62,12 @@ if(!isset($_SESSION['signin'])){
 
         <form method="post" action="" class="form-inline" id="form-retour">
 
+            <input type="hidden" name="prenom" value="null" id="prenomRetour">
+            <input type="hidden" name="nom" value="null" id="nomRetour">
+
             <div class="form-group">
                 <label for="transaction">Transaction</label>
                 <select name="transactionDropdown" id="transaction" class="form-control">
-
                 </select>
             </div>
 
