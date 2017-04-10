@@ -1,7 +1,7 @@
 ﻿<?php include('includes/head.php'); ?>
 
 <?php
-	include('../dataAccessLayer/ObjetDAO/ProduitDAO.php');
+	include('../dataAccessLayer/ObjetDAO/produitDAO.php');
 	include('../dataAccessLayer/ObjetVO/ProduitVO.php'); 
 	
 	//création de l'objet DAO ayant accès à la base de donnée.
