@@ -103,21 +103,6 @@ class ProduitDAO
             // Connection à la db
             $db = new PDO($this->connection_string, $this->username, $this->password);
 
-            // On fait la transaction
-            $stmt = $db->prepare("INSERT INTO transaction(employeid, nomclient, prenomclient, date) VALUES (:user , :nom , :prenom , NOW())");
-            $stmt->bindParam(':user', $_SESSION['signin']);
-            $stmt->bindParam(':nom', $nom);
-            $stmt->bindParam(':prenom', $prenom);
-            $stmt->execute();
-
-            $last_id = $db->lastInsertId();
-
-            // Ajoute la transaction au produit
-            $stmt = $db->prepare("INSERT INTO transactionproduit VALUES (:transaction , :produit)");
-            $stmt->bindParam(':transaction', $last_id);
-            $stmt->bindParam(':produit', $id[0]);
-            $stmt->execute();
-
             // Diminue le disponnible de 1
             $stmt = $db->prepare("UPDATE produit SET disponible = disponible + 1 where produitid = :prod");
             $stmt->bindParam(':prod', $id[0]);
@@ -167,14 +152,16 @@ class ProduitDAO
             $this->retournerItem($nom, $prenom, $produitID);
 
             // Prépare le statement
-            $stmt = $db->prepare("DELETE from transaction where transactionid = :transID");
+            $stmt = $db->prepare("DELETE from transactionproduit where transactionid = :transID");
             $stmt->bindParam(':transID', $id);
             $stmt->execute();
 
             // Prépare le statement
-            $stmt = $db->prepare("DELETE from transactionproduit where transactionid = :transID");
+            $stmt = $db->prepare("DELETE from transaction where transactionid = :transID");
             $stmt->bindParam(':transID', $id);
             $stmt->execute();
+
+
 
 
         } catch (PDOException $e) {
