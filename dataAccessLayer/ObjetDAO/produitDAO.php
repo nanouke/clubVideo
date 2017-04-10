@@ -164,7 +164,6 @@ class ProduitDAO
             $stmt->execute();
 
             $produitID = $stmt->fetch();
-            echo $produitID[0];
             $this->retournerItem($nom, $prenom, $produitID);
 
             // Prépare le statement
